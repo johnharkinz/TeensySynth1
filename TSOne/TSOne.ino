@@ -354,27 +354,6 @@ void myControlChange(byte channel, byte control, byte value) {
       }
       break;
 
-    case CCosc3:
-      switch (value) {
-        case 0:
-          waveform3.begin(WAVEFORM_SINE);
-          osc3Mode = 0;
-          break;
-        case 1:
-          waveform3.begin(WAVEFORM_TRIANGLE);
-          osc3Mode = 1;
-          break;
-        case 2:
-          waveform3.begin(WAVEFORM_SAWTOOTH);
-          osc3Mode = 2;
-          break;
-        case 3:
-          waveform3.begin(WAVEFORM_PULSE);
-          osc3Mode = 3;
-          break;
-      }
-      break;
-
     case CCdetune:
       detuneFactor = 1 - (0.05 * (value * DIV127));
       oscSet();
